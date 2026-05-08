@@ -12,6 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        /* ===== STYLES (inchangés depuis version stable) ===== */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Inter', sans-serif; background-color: #030712; color: #eef2ff; line-height: 1.5; overflow-x: hidden; scroll-behavior: smooth; }
         .liquid-bg { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -3; background: radial-gradient(circle at 30% 20%, #0a1128, #01040a); }
@@ -313,7 +314,16 @@
             <div class="category-wrapper fade-up"><h3 class="category-title lang-fr"><i class="fas fa-code"></i> Développement Web</h3><h3 class="category-title lang-en" style="display:none;"><i class="fas fa-code"></i> Web Development</h3>
             <div class="projets-grid">
                 <div class="projet-card glass-card"><div class="projet-image"><img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=600&auto=format" alt="Agriculture"></div><div class="projet-content"><h3>Reblokal</h3><p>Usine de produits 100% agricoles - Transformation et valorisation locale.</p><div class="projet-tags"><span class="tag">HTML/CSS</span><span class="tag">JS</span></div><a href="https://abrahamnicolas772-cloud.github.io/reblokal/" target="_blank" class="btn-outline">Découvrir →</a></div></div>
-                <div class="projet-card glass-card"><div class="projet-image"><img src="https://images.unsplash.com/photo-1515378960530-7c0da6231fb1?w=600&auto=format" alt="Formation"></div><div class="projet-content"><h3>Uncut Mastery</h3><p>Plateforme de formation et contenu exclusif pour créateurs.</p><div class="projet-tags"><span class="tag">React</span><span class="tag">Firebase</span></div><a href="#" class="btn-outline">En savoir plus →</a></div></div>
+                <!-- Uncut Mastery : lien ajouté -->
+                <div class="projet-card glass-card">
+                    <div class="projet-image"><img src="https://images.unsplash.com/photo-1515378960530-7c0da6231fb1?w=600&auto=format" alt="Formation"></div>
+                    <div class="projet-content">
+                        <h3>Uncut Mastery</h3>
+                        <p>Plateforme de formation et contenu exclusif pour créateurs.</p>
+                        <div class="projet-tags"><span class="tag">React</span><span class="tag">Firebase</span></div>
+                        <a href="https://abrahamnicolas772-cloud.github.io/Uncut-Mastery/" target="_blank" class="btn-outline">En savoir plus →</a>
+                    </div>
+                </div>
                 <div class="projet-card glass-card"><div class="projet-image"><img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=600&auto=format" alt="Portfolio vidéo"></div><div class="projet-content"><h3>Easy Visual Projects</h3><p>Portfolio moderne pour cinéaste et vidéaste – galerie immersive en React, CSS et JavaScript.</p><div class="projet-tags"><span class="tag">React</span><span class="tag">CSS</span><span class="tag">JavaScript</span></div><a href="https://abrahamnicolas772-cloud.github.io/easy-visualss/#/" target="_blank" class="btn-outline">Voir le portfolio →</a></div></div>
                 <div class="projet-card glass-card"><div class="projet-image"><img src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?w=600&auto=format" alt="Refonte site"></div><div class="projet-content"><h3>KOUTkreyon</h3><p>Refonte site vitrine + backoffice admin sécurisé.</p><div class="projet-tags"><span class="tag">PHP/MySQL</span><span class="tag">UX</span></div><a href="#" class="btn-outline">Explorer →</a></div></div>
             </div></div>
@@ -351,7 +361,6 @@
         </div>
     </section>
 
-    <!-- Formulaire de contact fonctionnel (AJAX) -->
     <section id="contact">
         <div class="section-container">
             <div class="section-separator"></div>
