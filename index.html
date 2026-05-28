@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Nicolas Abraham Nicolson | Full-Stack, UI/UX & Prompt Engineer | Portfolio</title>
+    <title>Nicolas Abraham Nicolson | Full-Stack, UI/UX & Prompt Engineer</title>
     <meta name="description" content="Portfolio de Nicolas Abraham Nicolson - Développeur Full-Stack, Designer UI/UX et Prompt Engineer. Créations digitales percutantes.">
     <meta name="keywords" content="Nicolas Abraham Nicolson, développeur full-stack, UI/UX designer, prompt engineer, portfolio, Haïti, Jérémie">
     <meta name="author" content="Nicolas Abraham Nicolson">
@@ -12,32 +12,42 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* ===== STYLES (inchangés depuis version stable) ===== */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Inter', sans-serif; background-color: #030712; color: #eef2ff; line-height: 1.5; overflow-x: hidden; scroll-behavior: smooth; }
+        
+        /* Liquid background amélioré */
         .liquid-bg { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -3; background: radial-gradient(circle at 30% 20%, #0a1128, #01040a); }
-        .blob { position: fixed; filter: blur(100px); border-radius: 50%; z-index: -2; pointer-events: none; opacity: 0.35; transition: transform 0.1s ease-out; }
+        .blob { position: fixed; filter: blur(120px); border-radius: 50%; z-index: -2; pointer-events: none; opacity: 0.4; transition: transform 0.15s ease-out; }
         .blob-1 { width: 60vw; height: 60vw; background: radial-gradient(circle, #1e3a8a, #0f172a); top: -20%; left: -20%; animation: liquidFloat 24s infinite alternate; }
         .blob-2 { width: 55vw; height: 55vw; background: radial-gradient(circle, #2563eb, #0f172a); bottom: -20%; right: -15%; animation: liquidFloat 28s infinite alternate-reverse; opacity: 0.3; }
         .blob-3 { width: 45vw; height: 45vw; background: radial-gradient(circle, #0284c7, #020617); top: 40%; left: 30%; animation: liquidFloat 20s infinite alternate; opacity: 0.25; }
         @keyframes liquidFloat { 0% { transform: translate(0, 0) scale(1) rotate(0deg); border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; } 100% { transform: translate(5%, -5%) scale(1.08) rotate(5deg); border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%; } }
+
+        /* Hero background */
         .hero-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; overflow: hidden; }
-        .hero-bg-image { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.55; filter: brightness(0.7) contrast(1.1); }
-        .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, rgba(2, 6, 23, 0.7), rgba(1, 8, 25, 0.75)); z-index: 0; }
+        .hero-bg-image { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.5; filter: brightness(0.7) contrast(1.1); }
+        .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, rgba(2, 6, 23, 0.75), rgba(1, 8, 25, 0.8)); z-index: 0; }
         .accueil { position: relative; min-height: 100vh; display: flex; align-items: center; overflow: hidden; margin-bottom: 1rem; }
         .accueil .section-container { position: relative; z-index: 2; }
-        section { padding: 80px 5%; position: relative; margin-bottom: 40px; scroll-margin-top: 80px; }
+
+        /* Sections & séparateurs */
+        section { padding: 90px 5%; position: relative; margin-bottom: 40px; scroll-margin-top: 80px; }
         .section-separator { width: 80px; height: 3px; background: linear-gradient(90deg, #3b82f6, transparent); margin: 0 auto 40px auto; border-radius: 3px; }
         .section-container { max-width: 1200px; margin: 0 auto; }
         .section-title { font-size: 2.8rem; font-weight: 700; margin-bottom: 2.5rem; text-align: center; background: linear-gradient(120deg, #fff, #3b82f6, #1e40af); background-size: 200% auto; -webkit-background-clip: text; background-clip: text; color: transparent; letter-spacing: -0.02em; }
-        .glass-card, .navbar, .projet-card, .contact-form, .skills-category, .apropos-text, .service-card, .certif-card, .stat-card, .review-card, .donation-card, .timeline-item { background: rgba(10, 20, 40, 0.8); backdrop-filter: blur(14px); border-radius: 1.75rem; border: 1px solid rgba(37, 99, 235, 0.5); box-shadow: 0 12px 28px rgba(0, 0, 0, 0.3), 0 0 10px rgba(37, 99, 235, 0.2); transition: all 0.3s ease-in-out; }
-        .glass-card:hover, .projet-card:hover, .service-card:hover, .review-card:hover, .donation-card:hover { border-color: rgba(59, 130, 246, 0.9); box-shadow: 0 18px 32px rgba(0, 0, 0, 0.4), 0 0 18px rgba(59, 130, 246, 0.5); transform: translateY(-4px); background: rgba(12, 24, 48, 0.9); }
+        
+        /* Glassmorphisme premium */
+        .glass-card, .navbar, .projet-card, .contact-form, .skills-category, .apropos-text, .service-card, .certif-card, .stat-card, .review-card, .donation-card, .timeline-item { background: rgba(10, 20, 40, 0.75); backdrop-filter: blur(14px); border-radius: 2rem; border: 1px solid rgba(59, 130, 246, 0.4); box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3), 0 0 15px rgba(59, 130, 246, 0.1); transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1); }
+        .glass-card:hover, .projet-card:hover, .service-card:hover, .review-card:hover, .donation-card:hover { border-color: rgba(59, 130, 246, 0.9); box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 25px rgba(59, 130, 246, 0.4); transform: translateY(-6px); background: rgba(12, 24, 48, 0.9); }
+
+        /* Navbar */
         .navbar { position: fixed; top: 20px; left: 5%; right: 5%; width: 90%; margin: 0 auto; padding: 0.7rem 2rem; z-index: 1000; border-radius: 3rem; background: rgba(2, 8, 20, 0.94); border-bottom: 1px solid rgba(59, 130, 246, 0.6); backdrop-filter: blur(18px); }
         .nav-container { display: flex; justify-content: space-between; align-items: center; max-width: 1300px; margin: 0 auto; }
         .nav-logo { display: flex; align-items: center; gap: 12px; }
-        .nav-logo-img { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; border: 2px solid #3b82f6; box-shadow: 0 0 8px rgba(59,130,246,0.5); }
-        .nav-logo a { font-size: 1.5rem; font-weight: 700; color: #ffffff; text-decoration: none; letter-spacing: -0.3px; }
-        .nav-menu { display: flex; gap: 2.2rem; align-items: center; flex-wrap: wrap; }
+        .nav-logo-img { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; border: 2px solid #3b82f6; box-shadow: 0 0 8px rgba(59,130,246,0.5); transition: transform 0.2s; }
+        .nav-logo-img:hover { transform: scale(1.05); }
+        .nav-logo a { font-size: 1.5rem; font-weight: 700; color: #ffffff; text-decoration: none; letter-spacing: -0.3px; background: linear-gradient(135deg, #fff, #60a5fa); -webkit-background-clip: text; background-clip: text; color: transparent; }
+        .nav-menu { display: flex; gap: 2rem; align-items: center; flex-wrap: wrap; }
         .nav-link { text-decoration: none; color: #e2e8f0; font-weight: 500; transition: 0.2s; position: relative; font-size: 0.95rem; }
         .nav-link::after { content: ''; position: absolute; width: 0; height: 2px; bottom: -5px; left: 0; background: #3b82f6; transition: width 0.25s; border-radius: 2px; }
         .nav-link:hover::after, .nav-link.active::after { width: 100%; }
@@ -47,74 +57,103 @@
         .lang-switch span.active { color: #60a5fa; text-shadow: 0 0 4px #60a5fa; }
         .lang-switch:hover { background: rgba(59,130,246,0.4); }
         .hamburger { display: none; flex-direction: column; cursor: pointer; gap: 5px; }
-        .bar { width: 26px; height: 2px; background: #60a5fa; border-radius: 4px; }
+        .bar { width: 26px; height: 2px; background: #60a5fa; border-radius: 4px; transition: 0.3s; }
+
+        /* Hero content */
         .accueil-container { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 3rem; padding: 2rem 0; }
         .accueil-content { flex: 1; }
-        .accueil-content h1 { font-size: 3.8rem; font-weight: 800; line-height: 1.2; margin-bottom: 1.5rem; color: #ffffff; text-shadow: 0 4px 20px rgba(0,0,0,0.6); }
-        .accueil-content p { font-size: 1.3rem; color: #f0f4ff; margin-bottom: 2rem; font-weight: 500; }
+        .accueil-content h1 { font-size: 3.8rem; font-weight: 800; line-height: 1.2; margin-bottom: 1.5rem; background: linear-gradient(135deg, #fff, #94a3b8); -webkit-background-clip: text; background-clip: text; color: transparent; text-shadow: none; }
+        .highlight { background: linear-gradient(135deg, #60a5fa, #3b82f6); -webkit-background-clip: text; background-clip: text; color: transparent; }
+        .accueil-content p { font-size: 1.3rem; color: #cbd5e1; margin-bottom: 2rem; font-weight: 500; }
         .btn { display: inline-block; padding: 12px 30px; border-radius: 40px; font-weight: 600; text-decoration: none; transition: 0.25s; margin-right: 1rem; font-size: 0.95rem; border: none; cursor: pointer; }
         .btn-primary { background: linear-gradient(95deg, #2563eb, #1e3a8a); color: #fff; box-shadow: 0 4px 14px rgba(37,99,235,0.4); }
-        .btn-primary:hover { transform: scale(1.02); box-shadow: 0 6px 20px rgba(37,99,235,0.7); }
+        .btn-primary:hover { transform: scale(1.02); box-shadow: 0 8px 25px rgba(37,99,235,0.6); }
         .btn-cv-group { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1rem; }
         .btn-cv { background: rgba(59,130,246,0.2); backdrop-filter: blur(8px); border: 1px solid #3b82f6; color: #bfdbfe; padding: 10px 24px; border-radius: 40px; text-decoration: none; font-weight: 600; transition: 0.25s; display: inline-flex; align-items: center; gap: 8px; }
         .btn-cv:hover { background: #3b82f6; color: #fff; border-color: #3b82f6; transform: scale(1.02); }
-        .image-placeholder { width: 320px; height: 320px; background: radial-gradient(circle, rgba(37,99,235,0.25), rgba(0,0,0,0.5)); border-radius: 35% 65% 70% 30% / 35% 40% 60% 65%; display: flex; align-items: center; justify-content: center; font-size: 6rem; color: #3b82f6; animation: morphShape 12s infinite alternate; box-shadow: 0 0 60px rgba(59,130,246,0.5); backdrop-filter: blur(2px); }
+        .image-placeholder { width: 320px; height: 320px; background: radial-gradient(circle, rgba(37,99,235,0.2), rgba(0,0,0,0.5)); border-radius: 35% 65% 70% 30% / 35% 40% 60% 65%; display: flex; align-items: center; justify-content: center; font-size: 6rem; color: #3b82f6; animation: morphShape 12s infinite alternate; box-shadow: 0 0 60px rgba(59,130,246,0.4); backdrop-filter: blur(2px); }
         @keyframes morphShape { 0% { border-radius: 55% 45% 35% 65% / 55% 40% 60% 45%; } 100% { border-radius: 40% 60% 65% 35% / 45% 55% 45% 55%; transform: rotate(3deg); } }
-        .partners-section { background: rgba(255, 255, 255, 0.08); backdrop-filter: blur(6px); border-top: 1px solid rgba(255,255,255,0.15); border-bottom: 1px solid rgba(255,255,255,0.15); padding: 35px 0; margin: 20px 0 0 0; }
+
+        /* Partners */
+        .partners-section { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(6px); border-top: 1px solid rgba(255,255,255,0.1); border-bottom: 1px solid rgba(255,255,255,0.1); padding: 35px 0; margin: 20px 0 0 0; }
         .partners-container { max-width: 1100px; margin: 0 auto; padding: 0 20px; text-align: center; }
         .partners-title { font-size: 0.9rem; text-transform: uppercase; letter-spacing: 3px; color: #94a3b8; margin-bottom: 25px; font-weight: 500; }
         .partners-logos { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 3rem; }
         .partner-logo { font-size: 1.8rem; font-weight: 600; color: #cbd5e1; transition: all 0.2s; display: flex; align-items: center; gap: 8px; }
         .partner-logo i { font-size: 2rem; color: #60a5fa; }
         .partner-logo span { font-size: 1rem; font-weight: 500; }
+        .partner-logo:hover { color: #fff; transform: translateY(-2px); }
+
+        /* Stats */
         .stats-grid { display: flex; justify-content: center; flex-wrap: wrap; gap: 1.8rem; margin: 2rem 0 1rem 0; }
         .stat-card { padding: 1.3rem 2rem; text-align: center; min-width: 160px; }
         .stat-number { font-size: 2.4rem; font-weight: 800; color: #60a5fa; line-height: 1; }
         .stat-label { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; margin-top: 0.4rem; color: #cbd5e1; }
+
+        /* Services */
         .services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.8rem; }
         .service-card { padding: 2rem; text-align: center; }
         .service-card i { font-size: 2.8rem; color: #3b82f6; margin-bottom: 1.2rem; }
         .service-card h3 { font-size: 1.3rem; margin: 0.8rem 0; font-weight: 700; color: #f0f4ff; }
         .service-card p { color: #cbd5e1; font-size: 0.9rem; line-height: 1.4; }
+
+        /* À propos */
         .apropos-content { display: flex; gap: 2.5rem; flex-wrap: wrap; align-items: center; }
         .apropos-text { flex: 2; padding: 2rem; }
-        .apropos-text p { color: #e2e8f0; font-size: 1rem; line-height: 1.5; margin-bottom: 1.2rem; }
+        .apropos-text p { color: #e2e8f0; font-size: 1rem; line-height: 1.6; margin-bottom: 1.2rem; }
         .info-item { margin: 0.7rem 0; display: flex; align-items: center; gap: 12px; }
         .info-item i { width: 28px; color: #3b82f6; }
         .profile-image { flex: 1; text-align: center; }
-        .profile-image img { width: 100%; max-width: 300px; height: auto; aspect-ratio: 3 / 4; object-fit: cover; border-radius: 1.5rem; border: 2px solid #3b82f6; box-shadow: 0 0 25px rgba(59,130,246,0.4); }
+        .profile-image img { width: 100%; max-width: 300px; height: auto; aspect-ratio: 3 / 4; object-fit: cover; border-radius: 1.5rem; border: 2px solid #3b82f6; box-shadow: 0 0 25px rgba(59,130,246,0.5); transition: transform 0.3s; }
+        .profile-image img:hover { transform: scale(1.02); }
+
+        /* Timeline */
         .timeline-grid { display: flex; flex-direction: column; gap: 1.2rem; margin-top: 1rem; }
-        .timeline-item { padding: 1.3rem 1.8rem; border-left: 3px solid #3b82f6; margin-bottom: 0; }
+        .timeline-item { padding: 1.3rem 1.8rem; border-left: 3px solid #3b82f6; }
         .timeline-item h3 { font-size: 1.3rem; display: flex; align-items: center; gap: 10px; }
         .timeline-date { color: #93c5fd; font-weight: 500; font-size: 0.85rem; margin: 0.3rem 0; display: inline-block; background: rgba(59,130,246,0.2); padding: 0.2rem 0.9rem; border-radius: 30px; }
+
+        /* Reviews */
         .reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.8rem; margin-top: 1rem; }
         .review-card { padding: 1.5rem; }
         .google-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(66, 133, 244, 0.2); padding: 0.3rem 0.8rem; border-radius: 30px; font-size: 0.7rem; margin-bottom: 1rem; color: #8ab4f8; }
         .stars { color: #fbbf24; margin: 0.5rem 0; font-size: 1rem; letter-spacing: 2px; }
+
+        /* Tech stack */
         .tech-stack { display: flex; flex-wrap: wrap; gap: 0.8rem; justify-content: center; margin: 2rem 0 1rem; }
         .tech-badge { background: rgba(37, 99, 235, 0.25); backdrop-filter: blur(6px); padding: 0.5rem 1.3rem; border-radius: 40px; font-weight: 500; font-size: 0.85rem; border: 1px solid rgba(59,130,246,0.6); transition: 0.2s; color: #e0f2fe; cursor: default; }
+
+        /* Skills */
         .skills-category { padding: 1.8rem; margin-bottom: 1rem; }
         .skills-category h3 { font-size: 1.6rem; margin-bottom: 1.2rem; color: #60a5fa; display: flex; align-items: center; gap: 8px; }
         .skill-item { margin-bottom: 1rem; }
         .skill-item span { display: block; margin-bottom: 5px; font-weight: 500; font-size: 0.9rem; }
         .skill-bar { background: rgba(255,255,255,0.12); border-radius: 12px; height: 6px; overflow: hidden; }
         .skill-progress { width: 0; height: 100%; background: linear-gradient(90deg, #3b82f6, #1e40af); border-radius: 12px; transition: width 1s cubic-bezier(0.2, 0.9, 0.4, 1); }
+
+        /* Projects */
         .category-title { font-size: 1.8rem; font-weight: 600; margin: 2rem 0 1.5rem 0; padding-bottom: 0.5rem; border-bottom: 2px solid #3b82f6; display: inline-block; color: #e0f2fe; }
-        .projets-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.8rem; }
-        .projet-card { padding: 0; overflow: hidden; flex-direction: column; }
+        .projets-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 2rem; }
+        .projet-card { padding: 0; overflow: hidden; flex-direction: column; transition: transform 0.3s, box-shadow 0.3s; }
         .projet-image { width: 100%; height: 200px; overflow: hidden; }
-        .projet-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
-        .projet-card:hover .projet-image img { transform: scale(1.05); }
+        .projet-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+        .projet-card:hover .projet-image img { transform: scale(1.08); }
         .projet-content { padding: 1.5rem; flex: 1; }
         .projet-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0.8rem 0; }
         .tag { background: rgba(59,130,246,0.25); padding: 0.2rem 0.8rem; border-radius: 20px; font-size: 0.7rem; font-weight: 500; color: #bfdbfe; }
+        .badge-demo { background: rgba(245,158,11,0.3); color: #fbbf24; border: 1px solid #f59e0b; }
+        .badge-wip { background: rgba(239,68,68,0.3); color: #f87171; border: 1px solid #ef4444; }
         .btn-outline { display: inline-flex; align-items: center; gap: 6px; margin-top: 0.5rem; padding: 7px 18px; border-radius: 30px; border: 1px solid #3b82f6; color: #93c5fd; text-decoration: none; font-weight: 500; transition: 0.25s; background: transparent; }
         .btn-outline:hover { background: #3b82f6; color: #fff; box-shadow: 0 0 12px #3b82f6; }
+
+        /* Certifications */
         .certif-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.8rem; }
         .certif-card { padding: 1.5rem; text-align: left; }
         .certif-card i { font-size: 2rem; color: #3b82f6; margin-bottom: 0.8rem; }
         .certif-card h3 { font-size: 1.2rem; margin-bottom: 0.5rem; font-weight: 600; color: #f0f4ff; }
         .certif-card p { font-size: 0.8rem; color: #94a3b8; }
+
+        /* Donation */
         .donation-grid { display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; margin-top: 1rem; }
         .donation-card { flex: 1; min-width: 280px; max-width: 400px; text-align: center; padding: 2rem; }
         .donation-icon { font-size: 3rem; color: #3b82f6; margin-bottom: 1rem; }
@@ -126,6 +165,8 @@
         .btn-donation { background: linear-gradient(95deg, #f59e0b, #d97706); color: #fff; box-shadow: 0 4px 14px rgba(245,158,11,0.4); margin-top: 0.8rem; width: 100%; justify-content: center; display: inline-flex; align-items: center; gap: 10px; padding: 10px 0; border-radius: 40px; text-decoration: none; font-weight: 600; transition: 0.25s; }
         .btn-donation:hover { transform: scale(1.02); box-shadow: 0 6px 20px rgba(245,158,11,0.6); }
         .support-note { text-align: center; margin-top: 2rem; font-size: 0.85rem; color: #94a3b8; display: flex; align-items: center; justify-content: center; gap: 8px; }
+
+        /* Contact */
         .contact-content { display: flex; flex-wrap: wrap; gap: 2rem; }
         .contact-info, .contact-form { flex: 1; padding: 1.8rem; }
         .contact-info h3 { font-size: 1.6rem; margin-bottom: 0.8rem; color: #f0f4ff; }
@@ -135,7 +176,10 @@
         .social-link { font-size: 1.8rem; color: #cbd5e1; transition: 0.2s; display: inline-flex; align-items: center; text-decoration: none; }
         .social-link:hover { color: #60a5fa; transform: translateY(-3px); }
         input, textarea { width: 100%; padding: 0.9rem 1.2rem; background: rgba(15, 30, 55, 0.95); border: 1px solid rgba(59,130,246,0.5); border-radius: 28px; color: #f0f4ff; font-family: inherit; outline: none; transition: 0.2s; font-size: 0.9rem; }
+        input:focus, textarea:focus { border-color: #3b82f6; box-shadow: 0 0 10px rgba(59,130,246,0.5); }
         footer { text-align: center; padding: 1.8rem; background: rgba(0, 0, 0, 0.7); border-top: 1px solid rgba(59,130,246,0.4); font-size: 0.85rem; color: #94a3b8; margin-top: 40px; }
+
+        /* Responsive */
         @media (max-width: 1024px) { .services-grid { grid-template-columns: repeat(2, 1fr); } .certif-grid { grid-template-columns: repeat(2, 1fr); } }
         @media (max-width: 768px) {
             .nav-menu { position: fixed; top: 85px; right: -100%; flex-direction: column; background: rgba(3, 10, 22, 0.98); backdrop-filter: blur(20px); width: 70%; padding: 2rem; border-radius: 1.5rem; transition: 0.3s; gap: 1.5rem; border: 1px solid #3b82f6; }
@@ -150,7 +194,7 @@
             .social-link { font-size: 1.5rem; gap: 1rem; }
             .social-links { gap: 1rem; }
         }
-        .fade-up { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease, transform 0.6s ease; }
+        .fade-up { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
         .fade-up.visible { opacity: 1; transform: translateY(0); }
         [data-lang="en"] .lang-fr, [data-lang="fr"] .lang-en { display: none; }
     </style>
@@ -311,28 +355,115 @@
         <div class="section-container">
             <div class="section-separator"></div>
             <h2 class="section-title lang-fr">Mes projets</h2><h2 class="section-title lang-en" style="display:none;">My projects</h2>
-            <div class="category-wrapper fade-up"><h3 class="category-title lang-fr"><i class="fas fa-code"></i> Développement Web</h3><h3 class="category-title lang-en" style="display:none;"><i class="fas fa-code"></i> Web Development</h3>
-            <div class="projets-grid">
-                <div class="projet-card glass-card"><div class="projet-image"><img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=600&auto=format" alt="Agriculture"></div><div class="projet-content"><h3>Reblokal</h3><p>Usine de produits 100% agricoles - Transformation et valorisation locale.</p><div class="projet-tags"><span class="tag">HTML/CSS</span><span class="tag">JS</span></div><a href="https://abrahamnicolas772-cloud.github.io/reblokal/" target="_blank" class="btn-outline">Découvrir →</a></div></div>
-                <!-- Uncut Mastery : lien ajouté -->
-                <div class="projet-card glass-card">
-                    <div class="projet-image"><img src="https://images.unsplash.com/photo-1515378960530-7c0da6231fb1?w=600&auto=format" alt="Formation"></div>
-                    <div class="projet-content">
-                        <h3>Uncut Mastery</h3>
-                        <p>Plateforme de formation et contenu exclusif pour créateurs.</p>
-                        <div class="projet-tags"><span class="tag">React</span><span class="tag">Firebase</span></div>
-                        <a href="https://abrahamnicolas772-cloud.github.io/Uncut-Mastery/" target="_blank" class="btn-outline">En savoir plus →</a>
+            <div class="category-wrapper fade-up">
+                <h3 class="category-title lang-fr"><i class="fas fa-code"></i> Développement Web & Mobile</h3>
+                <h3 class="category-title lang-en" style="display:none;"><i class="fas fa-code"></i> Web & Mobile Development</h3>
+                <div class="projets-grid">
+                    <!-- Reblokal -->
+                    <div class="projet-card glass-card">
+                        <div class="projet-image"><img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=600&auto=format" alt="Agriculture"></div>
+                        <div class="projet-content">
+                            <h3>Reblokal</h3>
+                            <p>Usine de produits 100% agricoles - Transformation et valorisation locale.</p>
+                            <div class="projet-tags"><span class="tag">HTML/CSS</span><span class="tag">JS</span></div>
+                            <a href="https://abrahamnicolas772-cloud.github.io/reblokal/" target="_blank" class="btn-outline">Découvrir →</a>
+                        </div>
+                    </div>
+                    <!-- Uncut Mastery (demo) -->
+                    <div class="projet-card glass-card">
+                        <div class="projet-image"><img src="https://images.unsplash.com/photo-1515378960530-7c0da6231fb1?w=600&auto=format" alt="Formation"></div>
+                        <div class="projet-content">
+                            <h3>Uncut Mastery <span class="tag badge-demo" style="margin-left:8px;">Démo</span></h3>
+                            <p>Plateforme de formation et contenu exclusif pour créateurs (version démonstration).</p>
+                            <div class="projet-tags"><span class="tag">React</span><span class="tag">Firebase</span></div>
+                            <a href="https://abrahamnicolas772-cloud.github.io/Uncut-Mastery/" target="_blank" class="btn-outline">En savoir plus →</a>
+                        </div>
+                    </div>
+                    <!-- Easy Visual Projects -->
+                    <div class="projet-card glass-card">
+                        <div class="projet-image"><img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=600&auto=format" alt="Portfolio vidéo"></div>
+                        <div class="projet-content">
+                            <h3>Easy Visual Projects</h3>
+                            <p>Portfolio moderne pour cinéaste et vidéaste – galerie immersive en React, CSS et JavaScript.</p>
+                            <div class="projet-tags"><span class="tag">React</span><span class="tag">CSS</span><span class="tag">JavaScript</span></div>
+                            <a href="https://abrahamnicolas772-cloud.github.io/easy-visualss/#/" target="_blank" class="btn-outline">Voir le portfolio →</a>
+                        </div>
+                    </div>
+                    <!-- Klaxon HT (Co-dev) -->
+                    <div class="projet-card glass-card">
+                        <div class="projet-image"><img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&auto=format" alt="Klaxon Haïti - Transport"></div>
+                        <div class="projet-content">
+                            <h3>Klaxon HT <span style="font-size:0.7rem; background:#3b82f6; padding:2px 8px; border-radius:20px;">Co-dev</span></h3>
+                            <p>Plateforme de transport à la demande (type Uber) en Haïti – version web avec React, Flask, Supabase.</p>
+                            <div class="projet-tags"><span class="tag">React</span><span class="tag">Flask</span><span class="tag">Supabase</span><span class="tag">UX</span></div>
+                            <a href="https://klaxonht.com" target="_blank" class="btn-outline">Visiter →</a>
+                        </div>
+                    </div>
+                    <!-- Klaxon Ayiti -->
+                    <div class="projet-card glass-card">
+                        <div class="projet-image"><img src="https://images.unsplash.com/photo-1586339949916-3e9457bef6d3?w=600&auto=format" alt="Klaxon Ayiti"></div>
+                        <div class="projet-content">
+                            <h3>Klaxon Ayiti</h3>
+                            <p>Plateforme de transport (version WordPress) – information et réservation.</p>
+                            <div class="projet-tags"><span class="tag">WordPress</span><span class="tag">Transport</span></div>
+                            <a href="https://klaxonayiti.com" target="_blank" class="btn-outline">Visiter →</a>
+                        </div>
+                    </div>
+                    <!-- App Klaxon (Co-dev) -->
+                    <div class="projet-card glass-card">
+                        <div class="projet-image"><img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=600&auto=format" alt="Application mobile Klaxon"></div>
+                        <div class="projet-content">
+                            <h3>App Klaxon <span style="font-size:0.7rem; background:#3b82f6; padding:2px 8px; border-radius:20px;">Co-dev</span></h3>
+                            <p>Application mobile de transport (Android) – commande de courses en temps réel.</p>
+                            <div class="projet-tags"><span class="tag">React Native</span><span class="tag">Android</span></div>
+                            <a href="https://play.google.com/store/apps/details?id=com.base69801264fbd77c69f8572d5c.app" target="_blank" class="btn-outline">Télécharger →</a>
+                        </div>
+                    </div>
+                    <!-- Genius -->
+                    <div class="projet-card glass-card">
+                        <div class="projet-image"><img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&auto=format" alt="Genius Business"></div>
+                        <div class="projet-content">
+                            <h3>Genius</h3>
+                            <p>Business logiciel de gestion et d'analyse pour entreprises.</p>
+                            <div class="projet-tags"><span class="tag">React</span><span class="tag">Node.js</span></div>
+                            <a href="https://genius.luxiousgroup.com/accueil#top" target="_blank" class="btn-outline">Découvrir →</a>
+                        </div>
+                    </div>
+                    <!-- Grow (lien mis à jour) -->
+                    <div class="projet-card glass-card">
+                        <div class="projet-image"><img src="https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=600&auto=format" alt="Plateforme e-learning"></div>
+                        <div class="projet-content">
+                            <h3>Grow <span class="tag badge-wip" style="margin-left:8px;">Beta</span></h3>
+                            <p>Plateforme e-learning interactive pour le développement professionnel (version fonctionnelle en cours d'amélioration).</p>
+                            <div class="projet-tags"><span class="tag">LMS</span><span class="tag">Vue.js</span></div>
+                            <a href="https://grow-platform-eroimd0oc-nicolas-abraham-s-projects.vercel.app/" target="_blank" class="btn-outline">Explorer →</a>
+                        </div>
+                    </div>
+                    <!-- Limbiz (demo) -->
+                    <div class="projet-card glass-card">
+                        <div class="projet-image"><img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&auto=format" alt="Limbiz"></div>
+                        <div class="projet-content">
+                            <h3>Limbiz <span class="tag badge-demo" style="margin-left:8px;">Démo</span></h3>
+                            <p>Solution digitale pour entreprises (ERP, CRM) – version de démonstration non finalisée.</p>
+                            <div class="projet-tags"><span class="tag">Full-Stack</span><span class="tag">SaaS</span></div>
+                            <a href="https://limbiz-test.vercel.app/" target="_blank" class="btn-outline">Aperçu →</a>
+                        </div>
+                    </div>
+                    <!-- Caribe Linkup (UX/UI) -->
+                    <div class="projet-card glass-card">
+                        <div class="projet-image"><img src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?w=600&auto=format" alt="Caribe Linkup UX/UI"></div>
+                        <div class="projet-content">
+                            <h3>Caribe Linkup <span class="tag badge-wip" style="margin-left:8px;">En cours</span></h3>
+                            <p>Design UX/UI d'une plateforme de mise en relation caribéenne.</p>
+                            <div class="projet-tags"><span class="tag">Figma</span><span class="tag">UI/UX</span><span class="tag">Prototypage</span></div>
+                            <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.5rem;">
+                                <a href="https://www.figma.com/proto/dnNKEbxcPMY9D9fE4L58E9/Sans-titre?node-id=1-1588&t=lpwCLyMuyxBNvOOS-1&starting-point-node-id=1%3A1588" target="_blank" class="btn-outline" style="padding: 4px 12px; font-size: 0.75rem;">🎨 Voir le prototype</a>
+                                <a href="https://github.com/abrahamnicolas772-cloud/caribe-linkup" target="_blank" class="btn-outline" style="padding: 4px 12px; font-size: 0.75rem;"><i class="fab fa-github"></i> Repository</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="projet-card glass-card"><div class="projet-image"><img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=600&auto=format" alt="Portfolio vidéo"></div><div class="projet-content"><h3>Easy Visual Projects</h3><p>Portfolio moderne pour cinéaste et vidéaste – galerie immersive en React, CSS et JavaScript.</p><div class="projet-tags"><span class="tag">React</span><span class="tag">CSS</span><span class="tag">JavaScript</span></div><a href="https://abrahamnicolas772-cloud.github.io/easy-visualss/#/" target="_blank" class="btn-outline">Voir le portfolio →</a></div></div>
-                <div class="projet-card glass-card"><div class="projet-image"><img src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?w=600&auto=format" alt="Refonte site"></div><div class="projet-content"><h3>KOUTkreyon</h3><p>Refonte site vitrine + backoffice admin sécurisé.</p><div class="projet-tags"><span class="tag">PHP/MySQL</span><span class="tag">UX</span></div><a href="#" class="btn-outline">Explorer →</a></div></div>
-            </div></div>
-            <div class="category-wrapper fade-up"><h3 class="category-title lang-fr"><i class="fas fa-palette"></i> Design Graphique</h3><h3 class="category-title lang-en" style="display:none;"><i class="fas fa-palette"></i> Graphic Design</h3>
-            <div class="projets-grid">
-                <div class="projet-card glass-card"><div class="projet-image"><img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?w=600&auto=format" alt="Branding"></div><div class="projet-content"><h3>Identité visuelle - Branding</h3><p>Création de logos, chartes graphiques et brandbooks.</p><div class="projet-tags"><span class="tag">Logo</span><span class="tag">Branding</span></div><a href="https://www.instagram.com/kout.kreyon" target="_blank" class="btn-outline">Voir sur Instagram →</a></div></div>
-                <div class="projet-card glass-card"><div class="projet-image"><img src="https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?w=600&auto=format" alt="Affiche"></div><div class="projet-content"><h3>Affiche événementielle</h3><p>Design d'affiche pour festival culturel caribéen.</p><div class="projet-tags"><span class="tag">Print</span><span class="tag">Typography</span></div><a href="https://www.instagram.com/kout.kreyon" target="_blank" class="btn-outline">Voir sur Instagram →</a></div></div>
-                <div class="projet-card glass-card"><div class="projet-image"><img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600&auto=format" alt="UI Design"></div><div class="projet-content"><h3>UI Design - Application Mobile</h3><p>Conception d'interfaces, design system complet.</p><div class="projet-tags"><span class="tag">UI</span><span class="tag">Figma</span></div><a href="https://www.instagram.com/kout.kreyon" target="_blank" class="btn-outline">Voir sur Instagram →</a></div></div>
-            </div></div>
+            </div>
         </div>
     </section>
 
@@ -401,30 +532,25 @@
     <footer><div class="section-container"><p>© 2025 Nicolas Abraham Nicolson — Full-Stack & Designer Graphique</p><p style="margin-top:6px;">Design bleu marin • Élégance technique • Avis vérifiés Google</p></div></footer>
 
     <script>
-        // Mobile menu toggle
+        // (scripts identiques à la version précédente, inchangés)
         const hamburger = document.getElementById('hamburger'), navMenu = document.getElementById('nav-menu');
         if(hamburger) hamburger.addEventListener('click', () => navMenu.classList.toggle('active'));
         document.querySelectorAll('.nav-link').forEach(l => l.addEventListener('click', () => navMenu.classList.remove('active')));
 
-        // Active nav link on scroll
         const sections = document.querySelectorAll('section'), navLinks = document.querySelectorAll('.nav-link');
         window.addEventListener('scroll', () => { let current = ''; sections.forEach(s => { if(scrollY >= s.offsetTop-120) current = s.getAttribute('id'); }); navLinks.forEach(l => { l.classList.remove('active'); if(l.getAttribute('href') === `#${current}`) l.classList.add('active'); }); });
 
-        // Skills bars animation
         const skillBars = document.querySelectorAll('.skill-progress'), fadeElements = document.querySelectorAll('.fade-up');
         const observer = new IntersectionObserver((entries) => { entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); if(e.target.classList.contains('skill-progress')){ const w = e.target.getAttribute('data-width'); if(w) e.target.style.width = w+'%'; } } }); }, { threshold: 0.2 });
         fadeElements.forEach(el => observer.observe(el)); skillBars.forEach(bar => observer.observe(bar));
         setTimeout(() => { skillBars.forEach(bar => { if(bar.getBoundingClientRect().top < window.innerHeight-80){ const w = bar.getAttribute('data-width'); if(w) bar.style.width = w+'%'; } }); }, 200);
 
-        // Parallax blobs
         document.addEventListener('mousemove', (e) => { const x = e.clientX / window.innerWidth, y = e.clientY / window.innerHeight; document.querySelectorAll('.blob').forEach((b, i) => { let moveX = (x-0.5)*20*(i+1), moveY = (y-0.5)*20*(i+1); b.style.transform = `translate(${moveX}px, ${moveY}px)`; }); });
 
-        // Donation chips
         document.querySelectorAll('.amount-chip').forEach(chip => { chip.addEventListener('click', () => { alert(`💰 Merci ! Vous avez sélectionné ${chip.innerText}. Vous allez être redirigé vers Wise pour finaliser le don.`); }); });
         document.getElementById('wiseLink')?.addEventListener('click', (e) => { e.preventDefault(); alert("🔗 Redirection vers Wise. Veuillez utiliser l'email abrahamnicolas772@gmail.com pour le transfert."); });
         document.getElementById('wiseCoffeeLink')?.addEventListener('click', (e) => { e.preventDefault(); alert("☕ Merci pour votre café ! Contactez-moi pour les détails du transfert Wise."); });
 
-        // Language switcher
         const langSwitch = document.getElementById('langSwitch');
         const langSpans = langSwitch.querySelectorAll('span[data-lang]');
         const root = document.body;
@@ -442,7 +568,6 @@
         });
         setLanguage('fr');
 
-        // Formulaire AJAX
         const form = document.getElementById('form-contact');
         if (form) {
             form.addEventListener('submit', async function(e) {
