@@ -1670,7 +1670,7 @@ function selectAmount(btn) {
 
 
 <!-- ============================================================
-CONTACT — DESIGN PREMIUM AVEC CONFIRMATION D'ENVOI + WISE
+CONTACT — AVEC CONFIRMATION PERSONNALISÉE + MESSAGE DE SUCCÈS
 ============================================================ -->
 <section id="contact" style="background: linear-gradient(180deg, #0a0a14 0%, #0d0d1f 100%); padding: 100px 0 120px; position: relative; overflow: hidden;">
     <!-- Fond décoratif -->
@@ -1686,6 +1686,12 @@ CONTACT — DESIGN PREMIUM AVEC CONFIRMATION D'ENVOI + WISE
             <span class="section-tag">Contact</span>
             <h2 class="section-title">Let's Talk About <span>Your Project</span></h2>
             <p class="section-subtitle">Got an idea? A need? I'm all ears.</p>
+        </div>
+
+        <!-- Message de succès après envoi -->
+        <div id="successMessage" style="display:none; text-align:center; padding:18px 24px; background:rgba(0,245,160,0.08); border:1px solid rgba(0,245,160,0.12); border-radius:12px; margin-bottom:30px; max-width:600px; margin-left:auto; margin-right:auto;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#00f5a0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-right:8px;"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span style="color:#00f5a0;font-weight:500;">Thank you! Your message has been sent. I'll reply within 24h.</span>
         </div>
 
         <div style="display: grid; grid-template-columns: 1.5fr 1fr; gap: 30px; max-width: 1000px; margin: 0 auto;">
@@ -1704,9 +1710,14 @@ CONTACT — DESIGN PREMIUM AVEC CONFIRMATION D'ENVOI + WISE
                     </div>
                 </div>
 
-                <form id="contactForm" onsubmit="handleContactSubmit(event)">
-                    <input type="text" name="_honey" style="display:none;">
-                    <input type="hidden" name="_captcha" value="false">
+                <!-- Formulaire Formspree avec confirmation personnalisée -->
+                <form action="https://formspree.io/f/xykgyege" method="POST">
+                    <!-- Redirection vers la page avec paramètre sent=true -->
+                    <input type="hidden" name="_next" value="https://abrahamnicolas772-cloud.github.io/portfolio-nicolas/?sent=true">
+                    
+                    <!-- Personnalisation de l'email de confirmation envoyé au visiteur -->
+                    <input type="hidden" name="_subject" value="Thank you for contacting Nicolas!">
+                    <input type="hidden" name="_message" value="Hi! I've received your message and will get back to you within 24 hours. Talk soon! — Nicolas">
                     
                     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 14px;">
                         <div>
@@ -1774,6 +1785,45 @@ CONTACT — DESIGN PREMIUM AVEC CONFIRMATION D'ENVOI + WISE
     </div>
 </section>
 
+<!-- Scripts pour donations et message de succès -->
+<script>
+    // Gestion de l'affichage du message de succès après redirection
+    (function() {
+        if (window.location.search.includes('sent=true')) {
+            const msg = document.getElementById('successMessage');
+            if (msg) {
+                msg.style.display = 'block';
+                // Supprime le paramètre de l'URL sans recharger la page
+                window.history.replaceState({}, document.title, window.location.pathname);
+            }
+        }
+    })();
+
+    function selectAmount(btn) {
+        document.querySelectorAll('.amount-btn').forEach(b => {
+            b.classList.remove('active');
+            b.style.background = 'rgba(255,255,255,0.03)';
+            b.style.border = '1px solid rgba(255,255,255,0.06)';
+            b.style.color = '#888';
+            b.style.fontWeight = '500';
+        });
+        btn.classList.add('active');
+        btn.style.background = 'rgba(0,245,160,0.10)';
+        btn.style.border = '1px solid rgba(0,245,160,0.20)';
+        btn.style.color = '#00f5a0';
+        btn.style.fontWeight = '600';
+    }
+
+    function toggleWiseInfo(e) {
+        e.preventDefault();
+        const info = document.getElementById('wiseInfo');
+        if (info.style.display === 'none' || info.style.display === '') {
+            info.style.display = 'block';
+        } else {
+            info.style.display = 'none';
+        }
+    }
+</script>
 <script>
 function selectAmount(btn) {
     document.querySelectorAll('.amount-btn').forEach(b => {
